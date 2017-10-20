@@ -1,8 +1,0 @@
-hook_*.sh
-!hook_*.sample.sh
-*.tar.*
-.idea
-__pycache__/
-build/
-dist/
-upx.exe
