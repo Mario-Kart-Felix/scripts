@@ -58,7 +58,6 @@ if %errorlevel% == 5 (
 )
 
 :done 
- sleep 1s
  echo Everything's all set up, boss.
  sleep 2s
  goto :eof
@@ -67,14 +66,19 @@ if %errorlevel% == 5 (
  pwd
  echo PULLING LATEST REMOTE BRANCH
  git pull
- echo DONE.
  echo ADDING FILES AND
  git add -A
  echo COMMITTING CHANGES
  git commit -m "Auto Upload"
- choice /N /M "Ready ? : "
+ choice /N /M "READY ? : "
  if %errorlevel% == 1 (
  echo GOING LIVE...
  git push origin master
- )
  sleep 2s
+ cls
+ call :done 
+)else (
+ cls
+ echo CHANGES (if any) WERE NOT PUBLISHED TO GITHUB.
+ sleep 2s)
+ 
