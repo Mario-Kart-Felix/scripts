@@ -10,7 +10,6 @@ if %errorlevel% ==1 (
 	del *.exe
 	cls
 	call :upload
-	call :done
 	goto :eof)
 if %errorlevel% ==2 (
 	cd DotCTheProgrammingClub
@@ -24,13 +23,11 @@ if %errorlevel% ==2 (
 	cls
 	call :upload
 	cd ..
-	call :done
 	goto :eof
 ) 
 if %errorlevel% ==3 (
 	cd games
 	call :upload
-	call :done
 	goto :eof
 ) 
 if %errorlevel% == 4 (
@@ -47,13 +44,11 @@ if %errorlevel% == 4 (
 	cd misc
 	call :upload
 	cd ..
-	call :done
 	goto :eof
 ) 
 if %errorlevel% == 5 (
 	cd scripts
 	call :upload
-	call :done
 	goto :eof
 )
 
@@ -69,7 +64,7 @@ if %errorlevel% == 5 (
  echo ADDING FILES AND
  git add -A
  echo COMMITTING CHANGES
- git commit -m "Auto Upload"
+ git commit -m "Uploaded via GitBot v0.3"
  choice /N /M "READY ? : "
  if %errorlevel% == 1 (
  echo GOING LIVE...
@@ -77,8 +72,8 @@ if %errorlevel% == 5 (
  sleep 2s
  cls
  call :done 
-)else (
+) else (
  cls
- echo CHANGES (if any) WERE NOT PUBLISHED TO GITHUB.
+ echo COMMITS CANCELLED TO GITHUB.
  sleep 2s)
  
