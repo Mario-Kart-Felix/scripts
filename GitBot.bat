@@ -16,12 +16,10 @@ if %errorlevel% ==2 (
 	cd DotCTheProgrammingClub
 	cd assignment_sols
 	del *.exe
-	cls
 	call :upload
 	cd ..
 	cd in_sessions
 	del *.exe
-	cls
 	call :upload
 	cd ..
 	call :done
@@ -62,20 +60,21 @@ if %errorlevel% == 5 (
  timeout /t 2 /nobreak > NUL
  goto :eof
 :upload
+ cls
  echo CURRENT DIRECTORY-
  echo %cd%
  echo PULLING LATEST REMOTE BRANCH
  git pull
- echo
+ echo  .
  echo ADDING FILES AND
  git add -A
  echo COMMITTING CHANGES
  git commit -m "Uploaded via GitBot v0.3"
- echo
+ echo  .
  choice /N /M "READY ? : "
  if %errorlevel% == 1 (
  echo GOING LIVE...
- echo
+ echo  .
  git push origin master
  timeout /t 2 /nobreak > NUL
  cls
