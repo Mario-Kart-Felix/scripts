@@ -10,6 +10,7 @@ if %errorlevel% ==1 (
 	del *.exe
 	cls
 	call :upload
+	call :done
 	goto :eof)
 if %errorlevel% ==2 (
 	cd DotCTheProgrammingClub
@@ -23,11 +24,13 @@ if %errorlevel% ==2 (
 	cls
 	call :upload
 	cd ..
+	call :done
 	goto :eof
 ) 
 if %errorlevel% ==3 (
 	cd games
 	call :upload
+	call :done
 	goto :eof
 ) 
 if %errorlevel% == 4 (
@@ -44,36 +47,40 @@ if %errorlevel% == 4 (
 	cd misc
 	call :upload
 	cd ..
+	call :done
 	goto :eof
 ) 
 if %errorlevel% == 5 (
 	cd scripts
 	call :upload
+	call :done
 	goto :eof
 )
 
 :done 
  echo Everything's all set up, boss.
- sleep 2s
+ timeout /t 2 /nobreak > NUL
  goto :eof
 :upload
  echo CURRENT DIRECTORY-
- pwd
+ echo %cd%
  echo PULLING LATEST REMOTE BRANCH
  git pull
+ echo
  echo ADDING FILES AND
  git add -A
  echo COMMITTING CHANGES
  git commit -m "Uploaded via GitBot v0.3"
+ echo
  choice /N /M "READY ? : "
  if %errorlevel% == 1 (
  echo GOING LIVE...
+ echo
  git push origin master
- sleep 2s
+ timeout /t 2 /nobreak > NUL
  cls
- call :done 
+ goto :eof 
 ) else (
  cls
  echo COMMITS CANCELLED TO GITHUB.
- sleep 2s)
- 
+ timeout /t 2 /nobreak > NUL)
