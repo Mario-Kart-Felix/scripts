@@ -69,7 +69,7 @@ if %errorlevel% == 5 (
  echo ADDING FILES AND
  git add -A
  echo COMMITTING CHANGES
- git commit -m "Uploaded via GitBot v0.3"
+ git commit -m "Uploaded via GitBot v0.4"
  echo  .
  choice /N /M "READY ? : "
  if %errorlevel% == 1 (
