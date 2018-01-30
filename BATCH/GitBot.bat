@@ -1,14 +1,22 @@
 @echo off
-echo 1.codes
+echo 1.competitive
 echo 2.DotC repositories
 echo 3.games
 echo 4.PyJAMAx64
-echo 5.scripts
+echo 5.scripting
 choice /C abcde /N /M "-> "
 if %errorlevel% ==1 (
-	cd codes
+	cd competitive
+	cd cpp
 	del *.exe
+	cd ..
+	cd java
+	del *.class
+	cd ..
+	cd python
+	del *.pyc
 	cls
+	cd ..
 	call :upload
 	call :done
 	goto :eof)
@@ -49,7 +57,7 @@ if %errorlevel% == 4 (
 	goto :eof
 ) 
 if %errorlevel% == 5 (
-	cd scripts
+	cd scripting
 	call :upload
 	call :done
 	goto :eof
@@ -69,7 +77,7 @@ if %errorlevel% == 5 (
  echo ADDING FILES AND
  git add -A
  echo COMMITTING CHANGES
- git commit -m "Uploaded via GitBot v0.4"
+ git commit -m "Uploaded via GitBot v0.5"
  echo  .
  choice /N /M "READY ? : "
  if %errorlevel% == 1 (

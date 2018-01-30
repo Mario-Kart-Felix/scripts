@@ -1,5 +1,5 @@
 @echo off
-git clone https://github.com/brute4s99/codes
+git clone https://github.com/brute4s99/competitive
 git clone https://github.com/brute4s99/games
 md DotCTheProgrammingClub
 cd DotCTheProgrammingClub
@@ -28,7 +28,8 @@ git checkout CLEANER
 cd ..
 ren PyJAMAx64 CLEANER
 cd ..
-git clone https://github.com/brute4s99/scripts
+git clone https://github.com/brute4s99/scripting
+git clone https://github.com/brute4s99/webd
 
 sleep 10s
 cls
