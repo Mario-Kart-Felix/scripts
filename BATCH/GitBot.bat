@@ -78,7 +78,7 @@ if %errorlevel% == 5 (
  git add -A
  echo COMMITTING CHANGES
  set /p Input=Commit Message : 
- git commit -m %%Input%%
+ git commit -m %Input%
  echo  .
  choice /N /M "READY ? : "
  if %errorlevel% == 1 (
