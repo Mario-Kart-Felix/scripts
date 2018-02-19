@@ -1,67 +1,12 @@
 @echo off
-echo 1.competitive
-echo 2.DotC repositories
-echo 3.games
-echo 4.PyJAMAx64
-echo 5.scripting
-choice /C abcde /N /M "-> "
-if %errorlevel% ==1 (
-	cd competitive
-	cd cpp
-	del *.exe
-	cd ..
-	cd java
-	del *.class
-	cd ..
-	cd python
-	del *.pyc
-	cls
-	cd ..
-	call :upload
-	call :done
-	goto :eof)
-if %errorlevel% ==2 (
-	cd DotCTheProgrammingClub
-	cd assignment_sols
-	del *.exe
-	call :upload
-	cd ..
-	cd in_sessions
-	del *.exe
-	call :upload
-	cd ..
-	call :done
-	goto :eof
-) 
-if %errorlevel% ==3 (
-	cd games
-	call :upload
-	call :done
-	goto :eof
-) 
-if %errorlevel% == 4 (
-	cd PyJAMAx64
-	cd CLEANER
-	call :upload
-	cd ..
-	cd SWITCHES
-	call :upload
-	cd ..
-	cd master
-	call :upload
-	cd ..
-	cd misc
-	call :upload
-	cd ..
-	call :done
-	goto :eof
-) 
-if %errorlevel% == 5 (
-	cd scripting
-	call :upload
-	call :done
-	goto :eof
-)
+echo AVAILABLE REPOSITORIES :-
+dir /A:D /O /B
+echo """""""""""""
+set /p repo=Repository : 
+ cd "%repo%"
+ call :upload
+ call :done
+ goto :eof
 
 :done 
  echo Everything's all set up, boss.
@@ -78,6 +23,7 @@ if %errorlevel% == 5 (
  git add -A
  echo COMMITTING CHANGES
  set /p Input=Commit Message : 
+ cls
  git commit -m "%Input%"
  echo  .
  choice /N /M "READY ? : "
