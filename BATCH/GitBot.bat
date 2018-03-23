@@ -3,7 +3,7 @@ echo AVAILABLE REPOSITORIES :-
 dir /A:D /O /B
 echo """""""""""""
 set /p repo=Repository : 
- cd "%repo%"
+ cd "%repo%*"
  call :upload
  call :done
  goto :eof
