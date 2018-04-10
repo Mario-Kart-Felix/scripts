@@ -45,7 +45,7 @@ for name in os.listdir("./NEW"):
 			title=imdb.json()['Title'].replace(":",'-')
 			if not os.path.isdir("./NEW/"+orig_name):
 				os.mkdir("./NEW/"+title)
-				shutil.move("./NEW"+orig_name,"./NEW/"+title)
+				shutil.move("./NEW/"+orig_name,"./NEW/"+title)
 				orig_name=title 
 			if(rating<6):
 				shutil.move("./NEW/"+orig_name,"Below 6/"+title)
