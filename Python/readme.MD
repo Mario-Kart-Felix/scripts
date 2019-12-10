@@ -12,4 +12,4 @@ This script organizes your movies into folders according to their IMDb rating.
 
 ## The How
 
-Uses an [API](https://www.omdbapi.com/) to get the rating and any information from the remote database.
+Uses an [API](https://www.omdbapi.com/) to get the rating and accurate movie name from the remote database.
