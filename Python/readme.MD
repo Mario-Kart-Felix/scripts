@@ -2,7 +2,7 @@
 
 ## The Why
 
-This project was conceived during 2016 when I had a good internet connection but no good streaming services available, compared to today.
+This project was conceived during 2016 when I had a good internet connection but no good streaming services were available, compared to today.
 I had a big collection of movies to watch, but no way to determine which were the good ones.
 Hence, this project helps to identify the good movies and the bad ones easily.
 
