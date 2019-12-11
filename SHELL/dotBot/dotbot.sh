@@ -56,13 +56,16 @@ Setup () {
     # add auto-suggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     echo "Terminal set-up done!"
-
+    touch $HOME/.dotfiles
     read -p "Want to restore the personal configs now? [Y/n]: " choice
     if [[ $choice == "n" ]] || [[ $choice == "N" ]]; then
         exit
     fi
     echo "Restoring my settings from the configs folder now !"
-    cp -rT ~/.config/dotfiles/$distro ~/
+    cd "$dotfiles/$distro"
+    echo $(ls *) >> $HOME/.dotfiles
+    echo $(ls .*) >> $HOME/.dotfiles
+    cp -rT $HOME/.config/dotfiles/$distro $HOME/
 }
 
 Sync () {
