@@ -2,6 +2,7 @@
 
 ## Shell Scripting
 
+- **DotBot**: Linux dotfiles and personalization syncronizer
 - **Clone_All**: clone all your repositories in one fell swoop
 
 ## Python Scripting
