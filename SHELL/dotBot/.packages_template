@@ -1,0 +1,7 @@
+# List the packages for this distro in this file.
+# You can enter multiple packages in one line, or one package per line. Both can be used together as well.
+# Remove the # from the line. 
+# Some examples: - 
+# git
+# zsh
+# curl wget screenfetch lolcat

@@ -1,0 +1,6 @@
+#List the files you would like to maintain through DotBot here: -
+#
+# Enter absolute address to the files.
+# These files will be restored to the same address.
+# For eg:-
+# $HOME/.dotfiles
