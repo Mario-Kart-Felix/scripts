@@ -88,11 +88,13 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
     curl -L http://install.ohmyz.sh | sh
 
     # add syntax-highlighting
-    cd $HOME/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-    chmod +x $HOME/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    chmod +x ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    echo "source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
 
     # add auto-suggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
     echo "Terminal set-up done!"
 fi
 
