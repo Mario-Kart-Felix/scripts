@@ -10,9 +10,13 @@ The Linux dotfiles and personalizations syncronizer.
 - Version maintenance for your dotfiles
 - Lightweight - stores only changes in files across different distros
 
-## How to populate `.dotfiles`?
-- Put the addresses relative to the `$HOME/` directory.
-    - Also accessible as `~/` usually.
+## `.dotfiles`
+- Put the absolute address to the files which you want to back up using dotBot in this file.
+    - Accessible as `~/.dotfiles`.
 
-## How to populate `.packages`?
-- Fill the `.packages` in `~/.dotfiles/$YOUR_DISTRO/.packages` with the packages you'd like installed as the setup process.
+## `.packages`
+- Fill the `.packages` file with the packages you'd like to install everytime your configs on a particular distro are restored.
+- Accessible as `~/.packages`.
+
+## `custom.sh`
+- Put any custom script that you would like to run in this file.
